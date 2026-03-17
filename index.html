@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Dev Burger - Cardápio</title>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <img src="./assets/hamb-1.png" alt="Logo Dev Burger" class="logo">
+            <h1>Dev Burger</h1>
+            <p>Rua Dev 217, Patos-PB</p>
+            <div id="date-span" class="status-badge">
+                <span>De Segunda a Domingo - 8:00 às 22:00</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="menu" class="container">
+        <h2 class="section-title">Conheça nosso menu</h2>
+        
+        <section  class="grid-menu">
+            <article class="menu-item">
+                <img src="./assets/hamb-1.png" alt="Hamburger Smash">
+                <div class="item-details">
+                    <h3>Hamburger Smash</h3>
+                    <p>Suculento hambúrguer 100% bovino, cheddar, alface, tomate e picles no pão artesanal.</p>
+                    <div class="item-footer">
+                        <span class="price">R$ 18,00</span>
+                        <button class="add-to-cart-btn" data-name="Hamburger Smash" data-price="18.00">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="./assets/hamb-2.png" alt="Hamburger Duplo">
+                <div class="item-details">
+                    <h3>Hamburger Duplo</h3>
+                    <p>Dois blends de carne 100% bovina, queijo duplo e molho especial.</p>
+                    <div class="item-footer">
+                        <span class="price">R$ 28,90</span>
+                        <button class="add-to-cart-btn" data-name="Hamburger Duplo" data-price="28.90">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="./assets/hamb-3.png" alt=">Hamburger Caseiro">
+                <div class="item-details">
+                    <h>Hamburger Caseiro</h3>
+                    <p>Suculento hambúrguer de carne 100% bovina, coberto com uma fatia generosa de
+                        queijo cheddar derretido, alface crocante, tomate fresco, cebola roxa e picles, tudo envolto em
+                        um pão..</p>
+                    <div class="item-footer">
+                        <span class="price">R$ 25,90</span>
+                        <button class="add-to-cart-btn" data-name="Hamburger Caseiro" data-price="25.90">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="./assets/hamb-4.png" alt=">hamburger Salada"/>
+                <div class="item-details">
+                    <h>Hamburger Salada</h3>
+                    <p>Suculento hambúrguer de carne 100% bovina, coberto com uma fatia generosa de
+                        queijo cheddar derretido.</p>
+                    <div class="item-footer">
+                        <span class="price">R$ 23,90</span>
+                        <button class="add-to-cart-btn" data-name="Hamburger Salada" data-price="23.90">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <h2 class="section-title">Bebidas</h2>
+
+        <section  class="grid-menu">
+            <article class="menu-item">
+                <img src="./assets/refri-1.png" alt="Coca Cola">
+                <div class="item-details">
+                    <h3>Coca-Cola Lata</h3>
+                    <p>Gelada e refrescante 350ml.</p>
+                    <div class="item-footer">
+                        <span class="price">R$ 6,90</span>
+                        <button class="add-to-cart-btn" data-name="Coca-Cola Lata" data-price="6.90">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="menu-item">
+                <img src="./assets/refri-2.png" alt="Coca Cola">
+                <div class="item-details">
+                    <h3>Guarana Lata</h3>
+                    <p>Gelada e refrescante 350ml.</p>
+                    <div class="item-footer">
+                        <span class="price">R$ 5,90</span>
+                        <button class="add-to-cart-btn" data-name="Guarana Lata" data-price="5.90">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Meu carrinho</h2>
+            <div id="cart-items"></div>
+            <div class="cart-summary">
+                <p>Total: <span id="cart-total">R$ 0,00</span></p>
+            </div>
+            <div class="address-section">
+                <label for="address">Endereço de entrega:</label>
+                <input type="text" id="address" placeholder="Digite seu endereço completo...">
+                <p id="address-warn" class="warn-text hidden">Por favor, digite seu endereço!</p>
+            </div>
+            <div class="modal-actions">
+                <button id="close-modal-btn">Voltar</button>
+                <button id="checkout-btn">Finalizar pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="cart-footer">
+        <button id="cart-btn">
+            (<span id="cart-count">0</span>) Veja meu carrinho
+            <i class="fa fa-cart-plus"></i>
+        </button>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
