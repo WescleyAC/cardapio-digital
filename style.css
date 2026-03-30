@@ -71,6 +71,8 @@
     }
 }
 
+
+
 .menu-item {
     display: flex;
     gap: 1rem;
@@ -81,6 +83,7 @@
     height: 112px;
     border-radius: 8px;
     object-fit: cover;
+    left: 10px;
 }
 
 .item-details h3 {
@@ -152,7 +155,7 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: var(--primary);
+    background: #2F4F4F;
     padding: 1rem;
     display: flex;
     justify-content: center;
